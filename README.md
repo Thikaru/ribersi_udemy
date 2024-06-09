@@ -31,3 +31,6 @@ npx ts-node training/hello.ts
   - 上記のコマンド実行すると「package.json」に ts-node と typescript が追加される
 - hello.ts を作成する．console.log で文字だけ出力
 - 動作するか次のコマンドを入力「npx ts-node hello.js」
+
+## VSCodeに入れるプラグイン
+- Draw.io Integration

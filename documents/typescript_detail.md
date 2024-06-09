@@ -193,4 +193,44 @@ setTimeout(() => {
 - readFile に渡されているコールバック関数は，書かれている処理の実行とコールバックの実行が並列に行われる．そのため，readFile 内のコールバック関数の処理より，他のコードの処理が実行されても変更されていないことがある．
 
 - promise による非同期処理の書き方
-  -
+  - 約束をした処理と，その約束した処理の実行後にする処理を設定できる
+```typescript
+import fs from 'fs'
+// Promiseを使うためにインポート
+import util from 'util'
+
+// ファイルを読み込む処理をPromiseで書いている
+const promisifyReadFile = util.promisify(fs.readFile)
+
+function main() {
+	// Promise<buffer>で，約束した処理のこと 今回はファイルを読み込むことを約束している
+	const readFilePromise = promisifyReadFile('package.json')
+
+	// thenは約束が果たされたらどんな処理を行うかを記述している
+	readFilePromise.then((data) => {
+		const fileContent = data.toString()
+		console.log(fileContent)
+	})
+}
+
+main()
+```
+
+- async/await
+  - awaitの処理をしたい関数の名前のfunctionの前に「async」をつける
+  - 非同期で処理を行える
+```typescript
+import fs from 'fs'
+import util from 'util'
+
+const promisifyReadFile = util.promisify(fs.readFile)
+
+async function main() {
+	const data = await promisifyReadFile('package.json')
+	const fileContent = data.toString()
+	console.log(fileContent)
+}
+
+main()
+```
+
