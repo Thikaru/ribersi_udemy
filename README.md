@@ -242,3 +242,8 @@ chmod +x ./bin/connect_mysql.sh
 ## VSCodeに入れるプラグイン
 - Draw.io Integration
 - swagger Viewer
+
+## 他の資料
+
+- [TypeScript詳細](documents/typescript_detail.md)
+- [三層アーキテクチャ](documents/three-layer-architecture.md)
