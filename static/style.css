@@ -1,51 +1,144 @@
-body {
+/* body {
 	text-align: center;
 }
 
-.warning-message-area {
-	height: 300px;
+table {
+	padding-top: 50px;
+	margin: 0 auto;
+} */
+
+/* style.css */
+
+body {
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #2c3e50;
+	color: #ecf0f1;
+	transition: background-color 0.5s, color 0.5s;
 }
 
-.warning-message {
-	width: 600px;
-	height: 30px;
-	margin: 0 auto;
-	background-color: red;
-	color: white;
-	font-weight: bold;
-	border-radius: 15px;
+header {
+	background-color: #34495e;
+	padding: 20px;
+	text-align: center;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	animation: fadeIn 1s ease-in-out;
 }
 
-.board {
-	width: 480px;
+header h1 {
+	margin: 0;
+	font-size: 2em;
+	color: #ecf0f1;
+	animation: slideInFromTop 1s ease-in-out;
+}
+
+main {
+	padding: 20px;
+	max-width: 800px;
 	margin: 0 auto;
+	text-align: center;
+	animation: fadeIn 2s ease-in-out;
+}
+
+a {
+	display: inline-block;
+	background-color: #e74c3c;
+	color: #ecf0f1;
+	padding: 10px 20px;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: background-color 0.3s, transform 0.3s;
 	margin-top: 20px;
-	display: grid;
-	grid-template-columns: repeat(8, 60px);
-	border: solid;
-	border-width: 1px 0 0 1px;
 }
 
-.square {
-	width: 60px;
-	height: 60px;
-	border: solid;
-	border-width: 0 1px 1px 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+a:hover {
+	background-color: #c0392b;
+	transform: scale(1.1);
 }
 
-.stone {
-	width: 52px;
-	height: 52px;
-	border-radius: 50%;
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	background-color: #34495e;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	animation: fadeIn 1.5s ease-in-out;
 }
 
-.dark {
-	background-color: black;
+th,
+td {
+	padding: 12px 15px;
+	text-align: center;
+	border-bottom: 1px solid #7f8c8d;
+	transition: background-color 0.3s, color 0.3s;
 }
 
-.light {
-	border: 1px solid;
+thead {
+	background-color: #1abc9c;
+	color: #2c3e50;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #2c3e50;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #34495e;
+}
+
+tbody tr:hover {
+	background-color: #16a085;
+	color: #ecf0f1;
+}
+
+th {
+	font-size: 1.1em;
+}
+
+td {
+	font-size: 1em;
+}
+
+/* スマホ用デザイン */
+@media (max-width: 600px) {
+	header h1 {
+		font-size: 1.5em;
+	}
+
+	th,
+	td {
+		padding: 8px 10px;
+		font-size: 0.9em;
+	}
+
+	a {
+		padding: 8px 15px;
+		font-size: 0.9em;
+	}
+
+	main {
+		padding: 10px;
+	}
+}
+
+/* アニメーションの定義 */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideInFromTop {
+	from {
+		transform: translateY(-100%);
+	}
+
+	to {
+		transform: translateY(0);
+	}
 }
