@@ -1,5 +1,7 @@
 # TypeScript 基本
 
+- [READMEへ](../README.md)
+
 ## JS と TypeScript の比較
 
 コード自体は結構似ている．
